@@ -1330,7 +1330,7 @@
     </column>
     <column id="333" parent="330" name="cena">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>double(11,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
