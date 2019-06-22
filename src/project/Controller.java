@@ -1,5 +1,7 @@
 package project;
 
+import com.mysql.cj.protocol.Resultset;
+import dbconnect.ConnectionClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,16 +10,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
+    public Label textLabel;
     double x = 0;
     double y = 0;
 
@@ -105,5 +113,19 @@ public class Controller implements Initializable {
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         appStage.setScene(scene);
         appStage.show();
+    }
+
+    public void showResults(ActionEvent actionEvent) throws SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+
+        Statement statement = connection.createStatement();
+        //statement.executeUpdate(sql);
+
+        String sql="SELECT * FROM test";
+        Resultset resultSet = (Resultset) statement.executeQuery(sql);
+        while (((ResultSet) resultSet).next()) {
+            textLabel.setText(((ResultSet) resultSet).getString(1).concat(" ").concat((((ResultSet) resultSet).getString(2))).concat(" ").concat((((ResultSet) resultSet).getString(3))));
+        }
     }
 }
