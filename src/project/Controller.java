@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -41,6 +38,15 @@ public class Controller implements Initializable {
 
     @FXML
     public TableView<PaliwoDetails> tablePaliwo;
+
+    @FXML
+    public Button loginButton;
+
+    @FXML
+    public TextField tf_username;
+
+    @FXML
+    public PasswordField pf_password;
 
     private ObservableList<PaliwoDetails> data;
 
@@ -124,13 +130,31 @@ public class Controller implements Initializable {
     //przejscie do glownego poanelu PO zalogowaniu
     /** TO JEST DO EDYCJI, PÓKI CO TYLKO TYMCZASOWO ŻEBY ZMIENIĆ PANEL **/
     @FXML
-    public void afterLogin(ActionEvent actionEvent) throws IOException {
-        Parent blah = FXMLLoader.load(getClass().getResource("mainPanel.fxml"));
-        Scene scene = new Scene(blah);
-        scene.setFill(Color.TRANSPARENT);
-        Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        appStage.setScene(scene);
-        appStage.show();
+    public void afterLogin(ActionEvent actionEvent) throws IOException, SQLException {
+
+        String username, password;
+
+        username = tf_username.getText();
+        password = pf_password.getText();
+
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+
+        Statement statement = connection.createStatement();
+        String sql="SELECT * FROM USER WHERE login"+
+                " = '" + username + "' and password = '" + password + "'";
+
+        Resultset resultSet = (Resultset) statement.executeQuery(sql);
+
+        if(((ResultSet) resultSet).next()){
+            Parent blah = FXMLLoader.load(getClass().getResource("mainPanel.fxml"));
+            Scene scene = new Scene(blah);
+            scene.setFill(Color.TRANSPARENT);
+            Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
     }
 
     @FXML

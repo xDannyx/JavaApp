@@ -56,6 +56,9 @@
                 <TableColumn fx:id="tableName" prefWidth="102.0" text="Nazwa" />
                 <TableColumn fx:id="tableCost" prefWidth="95.0" text="Cena" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             </children>
             <effect>

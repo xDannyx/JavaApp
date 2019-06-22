@@ -50,7 +50,7 @@
                     <children>
                         <HBox alignment="CENTER" style="-fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;">
                             <children>
-                                <TextField prefHeight="40.0" promptText="login" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                                <TextField fx:id="tf_username" prefHeight="40.0" promptText="login" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
                             </children>
                             <VBox.margin>
                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -58,7 +58,7 @@
                         </HBox>
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" style="-fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;">
                             <children>
-                        <PasswordField prefHeight="40.0" promptText="hasło" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                        <PasswordField fx:id="pf_password" prefHeight="40.0" promptText="hasło" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
                             </children>
                             <VBox.margin>
                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
