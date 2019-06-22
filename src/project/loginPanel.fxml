@@ -64,7 +64,7 @@
                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                             </VBox.margin>
                         </HBox>
-                        <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #2f2f2fa3; -fx-background-radius: 100; -fx-text-fill: white; -fx-font-family: Quicksand; -fx-font-weight: bold;" text="Zaloguj się">
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#afterLogin" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #2f2f2fa3; -fx-background-radius: 100; -fx-text-fill: white; -fx-font-family: Quicksand; -fx-font-weight: bold;" text="Zaloguj się">
                             <VBox.margin>
                                 <Insets bottom="10.0" top="20.0" />
                             </VBox.margin>
