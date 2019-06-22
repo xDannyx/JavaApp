@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c9a70fa-ce4e-4515-be5c-5532334374e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/paliwo/PaliwoDetails.java" afterDir="false" />
+    <list default="true" id="2c9a70fa-ce4e-4515-be5c-5532334374e0" name="Default Changelist" comment="Adrian - login">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2eb58d43-2190-4d03-a67e-ba415af10af7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2eb58d43-2190-4d03-a67e-ba415af10af7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dashboard/project/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dashboard/project/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dashboard/project/loginPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dashboard/project/loginPanel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dashboard/project/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dashboard/project/mainPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/mainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/mainPanel.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,6 +49,13 @@
         <item name="paliwo: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="test: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="paliwo: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="user: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -71,12 +76,22 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/mainPanel.fxml">
-          <provider selected="true" editor-type-id="text-editor">
+          <provider editor-type-id="text-editor">
             <state relative-caret-position="901">
               <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/loginPanel.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="60" column="57" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="57" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -103,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dbconnect/ConnectionClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="85">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,14 +130,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="157" column="52" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
+            <state relative-caret-position="360">
+              <caret line="155" column="9" lean-forward="true" selection-start-line="155" selection-start-column="9" selection-end-line="155" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://2eb58d43-2190-4d03-a67e-ba415af10af7/schema/paliwo/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="c154e23d-e8b2-4aa9-b07e-6ae2497eca26">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -162,8 +188,9 @@
         <option value="$PROJECT_DIR$/src/dbconnect/ConnectionClass.java" />
         <option value="$PROJECT_DIR$/src/paliwo/PaliwoDetails.java" />
         <option value="$PROJECT_DIR$/src/project/mainPanel.fxml" />
-        <option value="$PROJECT_DIR$/src/project/Controller.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/project/loginPanel.fxml" />
+        <option value="$PROJECT_DIR$/src/project/Controller.java" />
       </list>
     </option>
   </component>
@@ -281,7 +308,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561216904309</updated>
-      <workItem from="1561216908996" duration="15754000" />
+      <workItem from="1561216908996" duration="19660000" />
     </task>
     <task id="LOCAL-00001" summary="Adrian - DB Connect">
       <created>1561229870207</created>
@@ -290,11 +317,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561229870207</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adrian - Table">
+      <created>1561234986890</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561234986890</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adrian - login">
+      <created>1561243365564</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561243365564</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15754000" />
+    <option name="totallyTimeSpent" value="19660000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,7 +387,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adrian - DB Connect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adrian - DB Connect" />
+    <MESSAGE value="Adrian - Table" />
+    <MESSAGE value="Adrian - login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adrian - login" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/project/Main.java">
@@ -381,12 +424,39 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/mainPanel.fxml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="901">
           <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="das://2eb58d43-2190-4d03-a67e-ba415af10af7/schema/paliwo/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="c154e23d-e8b2-4aa9-b07e-6ae2497eca26">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="155" column="9" lean-forward="true" selection-start-line="155" selection-start-column="9" selection-end-line="155" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/loginPanel.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/paliwo/PaliwoDetails.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -412,18 +482,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbconnect/ConnectionClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="157" column="52" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

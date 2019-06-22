@@ -1315,29 +1315,63 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="330" parent="4" name="test"/>
-    <column id="331" parent="330" name="id">
+    <table id="331" parent="4" name="user"/>
+    <column id="332" parent="330" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="330" name="nazwa">
+    <column id="333" parent="330" name="nazwa">
       <Position>2</Position>
       <DataType>char(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="330" name="cena">
+    <column id="334" parent="330" name="cena">
       <Position>3</Position>
       <DataType>double(11,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="334" parent="330" name="PRIMARY">
+    <key id="335" parent="330" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <column id="336" parent="331" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="331" name="login">
+      <Position>2</Position>
+      <DataType>char(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="338" parent="331" name="password">
+      <Position>3</Position>
+      <DataType>char(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="339" parent="331" name="user_login_uindex">
+      <ColNames>login</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="340" parent="331" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="341" parent="331" name="user_login_uindex">
+      <ColNames>login</ColNames>
+      <UnderlyingIndexName>user_login_uindex</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
