@@ -53,6 +53,9 @@ public class Controller implements Initializable {
     @FXML
     public PasswordField pf_password;
 
+    @FXML
+    public Label login_label;
+
     //Register
     @FXML
     public Button registerButton;
@@ -175,6 +178,10 @@ public class Controller implements Initializable {
             appStage.setScene(scene);
             appStage.show();
         }
+        else {
+            login_label.setVisible(true);
+            login_label.setText("Nieprawidłowe dane logowania.");
+        }
 
     }
 
@@ -208,7 +215,7 @@ public class Controller implements Initializable {
     }
 
     public void afterRegister(ActionEvent actionEvent) throws IOException, SQLException {
-        register_label.setVisible(false);
+        //register_label.setVisible(false);
         String new_username, new_password, new_repassword;
 
         new_username = register_login.getText();
