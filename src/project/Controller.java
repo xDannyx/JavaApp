@@ -71,6 +71,19 @@ public class Controller implements Initializable {
 
     @FXML
     public Label register_label;
+
+    //Edit
+    @FXML
+    public TextField nameTextField;
+
+    @FXML
+    public TextField costTextField;
+
+    @FXML
+    public Button addButton;
+
+    @FXML
+    public Button changeButton;
     //
 
     double x = 0;
@@ -252,5 +265,47 @@ public class Controller implements Initializable {
             register_label.setVisible(true);
             register_label.setText("Powtórzone hasło nie jest zgodne.\nPopraw hasło.");
         }
+    }
+
+    public static void deleteRowByName(int nazwa) throws ClassNotFoundException, SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        Statement statement = connection.createStatement();
+        String sql = "delete from test where nazwa = '"+nazwa+"'";
+
+        statement.executeUpdate(sql);
+    }
+
+    @FXML
+    private void deleteRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
+        deleteRowByName(Integer.parseInt(nameTextField.getText()));
+    }
+
+    public static void addNewRow(int nazwa, double cena) throws ClassNotFoundException, SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        Statement statement = connection.createStatement();
+        String sql = "insert into test (nazwa, cena) values ('"+nazwa+"','"+cena+"')";
+
+        statement.executeUpdate(sql);
+    }
+
+    @FXML
+    private void addRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
+        addNewRow(Integer.parseInt(nameTextField.getText()),Double.parseDouble(costTextField.getText()));
+    }
+
+    public static void changeRowByName(int nazwa, double cena) throws ClassNotFoundException, SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        Statement statement = connection.createStatement();
+        String sql = "update test set cena = '"+cena+"' where nazwa = '"+nazwa+"'";
+
+        statement.executeUpdate(sql);
+    }
+
+    @FXML
+    private void changeRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
+        changeRowByName(Integer.parseInt(nameTextField.getText()),Double.parseDouble(costTextField.getText()));
     }
 }
