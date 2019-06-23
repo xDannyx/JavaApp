@@ -30,6 +30,7 @@ public class Controller implements Initializable {
 
     public Label textLabel;
 
+    //Table Data
     @FXML
     public TableColumn<PaliwoDetails, String> tableName;
 
@@ -39,6 +40,10 @@ public class Controller implements Initializable {
     @FXML
     public TableView<PaliwoDetails> tablePaliwo;
 
+
+    private ObservableList<PaliwoDetails> data;
+
+    //Login
     @FXML
     public Button loginButton;
 
@@ -48,7 +53,22 @@ public class Controller implements Initializable {
     @FXML
     public PasswordField pf_password;
 
-    private ObservableList<PaliwoDetails> data;
+    //Register
+    @FXML
+    public Button registerButton;
+
+    @FXML
+    public TextField register_login;
+
+    @FXML
+    public PasswordField register_password;
+
+    @FXML
+    public PasswordField register_repassword;
+
+    @FXML
+    public Label register_label;
+    //
 
     double x = 0;
     double y = 0;
@@ -147,6 +167,7 @@ public class Controller implements Initializable {
         Resultset resultSet = (Resultset) statement.executeQuery(sql);
 
         if(((ResultSet) resultSet).next()){
+            System.out.print("Jestem w ifie");
             Parent blah = FXMLLoader.load(getClass().getResource("mainPanel.fxml"));
             Scene scene = new Scene(blah);
             scene.setFill(Color.TRANSPARENT);
@@ -184,5 +205,45 @@ public class Controller implements Initializable {
 
         tablePaliwo.setItems(null);
         tablePaliwo.setItems(data);
+    }
+
+    public void afterRegister(ActionEvent actionEvent) throws IOException, SQLException {
+        register_label.setVisible(false);
+        String new_username, new_password, new_repassword;
+
+        new_username = register_login.getText();
+        new_password = register_password.getText();
+        new_repassword = register_repassword.getText();
+        System.out.print(new_password+"//"+new_repassword);
+        if (new_repassword.equals(new_password)) {
+            System.out.print("Jestem w ifie");
+            ConnectionClass connectionClass = new ConnectionClass();
+            Connection connection = connectionClass.getConnection();
+
+            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM user WHERE login" +
+                    " = '" + new_username + "'";
+
+            Resultset resultSet = (Resultset) statement.executeQuery(sql);
+
+            if (!((ResultSet) resultSet).next()) {
+                System.out.print("Jestem w drugim ifie");
+                String sql2= "INSERT INTO USER (login, password) VALUES('"+new_username+"','"+new_password+"')";
+                //insert into user (login,password) VALUES('admin2','admin2')
+                statement = connection.createStatement();
+                statement.executeUpdate(sql2);
+                register_label.setVisible(true);
+                register_label.setTextFill(Color.GREEN);
+                register_label.setText("Pomyślnie utworzono użytkownika.\nMożesz się zalogować.");
+            }
+            else{
+                register_label.setVisible(true);
+                register_label.setText("Istnieje taki użytkownik.");
+            }
+        }
+        else{
+            register_label.setVisible(true);
+            register_label.setText("Powtórzone hasło nie jest zgodne.\nPopraw hasło.");
+        }
     }
 }
