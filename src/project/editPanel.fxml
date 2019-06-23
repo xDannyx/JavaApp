@@ -45,7 +45,7 @@
                         </HBox>
                     </children>
                 </HBox>
-            <TableView fx:id="tablePaliwo" layoutX="136.0" layoutY="153.0" prefHeight="270.0" prefWidth="502.0">
+            <TableView fx:id="tablePaliwo" layoutX="136.0" layoutY="153.0" prefHeight="270.0" prefWidth="500.0">
                <columns>
                   <TableColumn fx:id="tableName" prefWidth="101.0" text="Nazwa" />
                   <TableColumn fx:id="tableCost" prefWidth="96.0" text="Cena" />

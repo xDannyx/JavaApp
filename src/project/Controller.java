@@ -267,7 +267,7 @@ public class Controller implements Initializable {
         }
     }
 
-    public static void deleteRowByName(int nazwa) throws ClassNotFoundException, SQLException {
+    public static void deleteRowByName(String nazwa) throws ClassNotFoundException, SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         Statement statement = connection.createStatement();
@@ -278,10 +278,10 @@ public class Controller implements Initializable {
 
     @FXML
     private void deleteRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
-        deleteRowByName(Integer.parseInt(nameTextField.getText()));
+        deleteRowByName(nameTextField.getText());
     }
 
-    public static void addNewRow(int nazwa, double cena) throws ClassNotFoundException, SQLException {
+    public static void addNewRow(String nazwa, double cena) throws ClassNotFoundException, SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         Statement statement = connection.createStatement();
@@ -292,10 +292,10 @@ public class Controller implements Initializable {
 
     @FXML
     private void addRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
-        addNewRow(Integer.parseInt(nameTextField.getText()),Double.parseDouble(costTextField.getText()));
+        addNewRow(nameTextField.getText(),Double.parseDouble(costTextField.getText()));
     }
 
-    public static void changeRowByName(int nazwa, double cena) throws ClassNotFoundException, SQLException {
+    public static void changeRowByName(String nazwa, double cena) throws ClassNotFoundException, SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         Statement statement = connection.createStatement();
@@ -306,6 +306,6 @@ public class Controller implements Initializable {
 
     @FXML
     private void changeRow(ActionEvent actionEvent) throws ClassNotFoundException, SQLException {
-        changeRowByName(Integer.parseInt(nameTextField.getText()),Double.parseDouble(costTextField.getText()));
+        changeRowByName(nameTextField.getText(),Double.parseDouble(costTextField.getText()));
     }
 }
